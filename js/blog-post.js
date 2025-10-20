@@ -189,7 +189,7 @@ searchInput.addEventListener("input", () => {
       wrapper.className = "search-item";
 
       wrapper.innerHTML = `
-        <a href="${post.link}">
+        <a href="${post.url}">
           <div class="search-title">${post.title}</div>
           <div class="search-desc">${post.text?.substring(0, 90) || ""}...</div>
         </a>
@@ -201,6 +201,30 @@ searchInput.addEventListener("input", () => {
     searchResults.innerHTML = "<p>No results found.</p>";
   }
 });
+
+// Helper used on this page to render recent posts (same as homepage)
+function createArticleElement(post, index) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("article-wrapper");
+
+  if (index === 2) {
+    wrapper.classList.add("fade-bottom-mask");
+  }
+
+  const article = document.createElement("article");
+  article.innerHTML = `
+    <a href="${post.url}">
+      <img class="blog-cam" src="${post.img}" alt="">
+      <div class="blog-post">
+        <h2>${post.title}</h2>
+        <p>${post.text}</p>
+      </div>
+    </a>
+  `;
+
+  wrapper.appendChild(article);
+  return wrapper;
+}
 
 // Dark Mode Toggle and LocalStorage Save
 document.addEventListener("DOMContentLoaded", () => {

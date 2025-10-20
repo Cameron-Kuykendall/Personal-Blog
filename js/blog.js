@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Create a blog post article element
 function createArticle(data) {
   const article = document.createElement("article");
-  article.classList.add("fade-in"); // 👈 add the class for animation
+  article.classList.add("fade-in"); //  add the class for animation
 
   article.innerHTML = `
   <a href="${data.url}">
@@ -126,10 +126,6 @@ window.addEventListener("scroll", () => {
 
 
 // Dark Mode Toggle and LocalStorage Save
-
-// Dark Mode Toggle and LocalStorage Save
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('theme-toggle');
