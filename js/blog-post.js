@@ -139,29 +139,38 @@ const shareData = {
   url: window.location.href,
 };
 
-const facebookBtn = document.getElementById('facebook-share');
-const twitterBtn = document.getElementById('twitter-share');
+const facebookBtn = document.getElementById("facebook-share");
+const twitterBtn = document.getElementById("twitter-share");
 
-facebookBtn.addEventListener('click', (e) => {
+facebookBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (navigator.share) {
     navigator.share(shareData);
   } else {
     // fallback to Facebook web share if navigator.share is not supported
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        window.location.href
+      )}`,
+      "_blank"
+    );
   }
 });
 
-twitterBtn.addEventListener('click', (e) => {
+twitterBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (navigator.share) {
     navigator.share(shareData);
   } else {
     // fallback to Twitter web share if navigator.share is not supported
-    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=Check%20this%20out!`, '_blank');
+    window.open(
+      `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+        window.location.href
+      )}&text=Check%20this%20out!`,
+      "_blank"
+    );
   }
 });
-
 
 //serach bar
 const searchInput = document.getElementById("search-input");
